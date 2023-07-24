@@ -2,6 +2,26 @@ import Logo from '../atoms/Logo'
 import Links from '../molecules/Links'
 
 export default function Header() {
+    const pathname = window.location.href
+
+    const linksHeader = [
+        {
+            texto: 'Our rates',
+            url: `${pathname}#rates`
+        },
+        {
+            texto: 'Favorite projects',
+            url: `${pathname}#projects`
+        },
+        {
+            texto: 'Reviews',
+            url: `${pathname}#reviews`
+        },
+        {
+            texto: 'Contact',
+            url: `${pathname}#contact`
+        },
+    ]
     return (
         <header
             className="
@@ -14,7 +34,7 @@ export default function Header() {
             "
         >
             <Logo />
-            <Links />
+            <Links links={linksHeader} />
         </header>
     )
 }
